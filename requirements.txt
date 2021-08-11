@@ -5,3 +5,4 @@ ipywidgets
 numpy
 pandas
 matplotlib
+voila
