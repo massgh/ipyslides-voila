@@ -1,0 +1,7 @@
+ipyslides==0.2.1
+jupyterlab==3
+markdown
+ipywidgets
+numpy
+pandas
+matplotlib
