@@ -1,4 +1,4 @@
-ipyslides==0.6.3
+ipyslides==0.7.1
 jupyterlab==3
 markdown
 ipywidgets
