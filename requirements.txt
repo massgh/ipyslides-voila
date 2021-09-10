@@ -1,6 +1,7 @@
-ipyslides>=0.8.5
+ipyslides>=0.8.6
 jupyterlab==3
 markdown
+altair
 ipywidgets
 numpy
 pandas
