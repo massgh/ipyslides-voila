@@ -1,4 +1,4 @@
-ipyslides>=0.8.6
+ipyslides>=0.8.7
 jupyterlab==3
 markdown
 altair
@@ -8,3 +8,4 @@ pandas
 matplotlib
 voila
 sidecar
+plotly
