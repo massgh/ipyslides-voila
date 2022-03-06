@@ -1,4 +1,4 @@
-ipyslides>=1.3.3
+ipyslides>=1.3.4
 jupyterlab==3
 markdown
 altair
