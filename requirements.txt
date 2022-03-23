@@ -1,5 +1,5 @@
 ipyslides>=1.4.4
-jupyterlab==3.1
+jupyterlab==3.2
 markdown
 altair
 ipywidgets
