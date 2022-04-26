@@ -134,14 +134,17 @@ except:
 ---
 ## Writing Pandas DataFrame
 {{df}}
-## Writing Altair Chart\nMay not work everywhere, needs javascript\n{.Note .Warning}
+---
+## Writing Altair Chart
+May not work everywhere, needs javascript
+{.Note .Warning}
 {{chart}}
-
+---
 ```python run
 try:
     import plotly.graph_objects as go
     fig = go.Figure()
-    fig.add_trace(go.Bar([1,5,8,9]))
+    fig.add_trace(go.Bar(y=[1,5,8,9]))
 except:
     fig = '### Install `plotly` to view output'
 write(('## Writing Plotly Figure',fig))
