@@ -1,5 +1,6 @@
 # IPyslides From Markdown
-<center> Author: Abdul Saboor
+Author: Abdul Saboor
+{.Center}
 ```python run
 import textwrap, time
 from io import StringIO
@@ -83,7 +84,7 @@ can be included in `iwrite` command as well as other objects that can be passed 
 #### If an object does not render as you want, use `display(object)` or it's own library's mehod to display inside Notebook.
             
 ---
-## Plotting with Matplotlib')
+## Plotting with Matplotlib
 ```python run s
 import numpy as np, matplotlib.pyplot as plt
 x = np.linspace(0,2*np.pi)
