@@ -11,11 +11,11 @@ from ipyslides.formatter import libraries, __reprs__
 from ipyslides._base.intro import how_to_slide
 import ipyslides.parsers as prs
 prs.write(how_to_slide)
-repr_methods = ', '.join([f'`_repr_{rep}_`' for rep in __reprs__])
-custom_methods = ', '.join([f"`{lib['name']}.{lib['obj']}`" for lib in libraries])
+repr_methods = ',  '.join([f'`_repr_{rep}_`' for rep in __reprs__])
+custom_methods = ',  '.join([f"`{lib['name']}.{lib['obj']}`" for lib in libraries])
+css_styles = prs.css_styles
 ```   
 ---
-
 # Slide 1 {.Success}
 ```python run source
 import ipyslides as isd
@@ -25,10 +25,8 @@ version = isd.__version__
 Version: {{version}} as executed from below code in markdown. 
 {{source}}
     
----
-    
+---    
 # Slide 2 {.Success}
-Created using `%%slide 2 -m` with markdown only
 ```multicol
 # Column A
 ||### Sub column A {.Success}||### Sub column B ||
@@ -36,14 +34,6 @@ Created using `%%slide 2 -m` with markdown only
 # Column B
 ```
 That version from last slide is still in memory. See it is there {{version}}
-
----
-# Slide 3
-You can call few functions in double pairs of curly brackets to add different content directly in markdown.
-Get list of them by `ipyslides.parsers.markdown_callables`
-{{prs.markdown_callables}}
-I am {{prs.alert("Alerted")}} and I am *{{prs.colored("colored and italic text","magenta","whitesmoke")}}*
-{{prs.insert_notes('### Note for slide 1')}}
 
 ---
 # IPySlides Online Running Sources 
@@ -56,7 +46,7 @@ Launch as voila prs (may not work as expected [^1])[![Binder](https://mybinder.o
 Launch example Notebook [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/massgh/ipyprs-voila/HEAD?urlpath=lab%2Ftree%2Fnotebooks%2Fipyprs.ipynb)
 {.Note .Success}
 
-[^1]: Add references like this per slide. Use prs.cite() to add citations generally.
+[^1]: Add references like this per slide. Use prs.cite() or cite\`key\` in markdown to add citations generally.
 
 ---
 
@@ -73,17 +63,12 @@ command to show in Notebook outside `write`.
 
 ---
 ## Interactive Widgets
-### Any object in `ipywidgets` <a href="https://ipywidgets.readthedocs.io/en/latest/">Link to ipywidgtes right here using `textbox` command</a> 
-or libraries based on ipywidgtes such as `bqplot`,`ipyvolume`,plotly's `FigureWidget`{{prs.cite('pf','This is refernce to FigureWidget using `LiveSlides.cite` command')}}(reference at end)
+@pf`This is refernce to FigureWidget using LiveSlides.cite command`
+### Any object in `ipywidgets` <a href="https://ipywidgets.readthedocs.io/en/latest/">Link to ipywidgtes right here using textbox command</a> 
+or libraries based on ipywidgtes such as `bqplot`,`ipyvolume`,plotly's `FigureWidget` cite`pf` (reference at end)
 can be included in `iwrite` command as well as other objects that can be passed to `write` with caveat of Javascript.
 {.Warning}
----
-## Commands which do all Magic!
-{{prs.doc(write,'LiveSlides')}} {{prs.doc(iwrite,'LiveSlides')}} {{prs.doc(prs.parse_xmd,'LiveSlides')}}
-    
-#### If an object does not render as you want, use `display(object)` or it's own library's mehod to display inside Notebook.
-            
----
+---        
 ## Plotting with Matplotlib
 ```python run s
 import numpy as np, matplotlib.pyplot as plt
@@ -183,12 +168,12 @@ def onclick(btn):
 button.on_click(onclick)
 update_plot() #Initialize plot
 ```
-{{prs.insert_notes('## Something to hide from viewers!')}}
+notes:## Something to hide from viewers!:
 
 ---
 
 ## Displaying image from url from somewhere in Kashmir (کشمیر)
-{{prs.image(r'https://assets.gqindia.com/photos/616d2712c93aeaf2a32d61fe/master/pass/top-image%20(1).jpg')}}
+image`https://assets.gqindia.com/photos/616d2712c93aeaf2a32d61fe/master/pass/top-im.jpg`
 
 ---
 ## $\LaTeX$ in Slides
@@ -196,13 +181,10 @@ Use `$ $` or `$$ $$` to display latex in Markdown, or embed images of equations
 $$\int_0^1\frac{1}{1-x^2}dx$$
 
 ---
-## Built-in CSS styles')
-{{prs.css_styles}}
+## Built-in CSS styles
+{{css_styles}}
 
 
  سارے جہاں میں دھوم ہماری زباں کی 
   ہے۔
 {.Right .RTL}
-
----
-{{prs.source.from_file('markdown.md','text')}}
