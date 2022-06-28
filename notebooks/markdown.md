@@ -1,6 +1,6 @@
 # IPyslides From Markdown
-Author: Abdul Saboor
-{.Center}
+center`alert`Author: Abdul Saboor``
+
 ```python run
 import textwrap, time
 from io import StringIO
@@ -35,21 +35,8 @@ Version: {{version}} as executed from below code in markdown.
 ```
 That version from last slide is still in memory. See it is there {{version}}
 
----
-# IPySlides Online Running Sources 
-Launch as voila prs (may not work as expected [^1])[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/massgh/ipyprs-voila/HEAD?urlpath=voila%2Frender%2Fnotebooks%2Fipyprs.ipynb)
-{.Note .Error}
-
-[Edit on Kaggle](https://www.kaggle.com/massgh/ipyprs)
-{.Note .Warning}
-
-Launch example Notebook [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/massgh/ipyprs-voila/HEAD?urlpath=lab%2Ftree%2Fnotebooks%2Fipyprs.ipynb)
-{.Note .Success}
-
-[^1]: Add references like this per slide. Use prs.cite() or cite\`key\` in markdown to add citations generally.
 
 ---
-
 ## IPython Display Objects
 #### Any object with following methods could be in`write` command:
 {{repr_methods}}
@@ -63,14 +50,14 @@ command to show in Notebook outside `write`.
 
 ---
 ## Interactive Widgets
-@pf`This is refernce to FigureWidget using LiveSlides.cite command`
+$pf`This is refernce to FigureWidget using LiveSlides.cite command`
 ### Any object in `ipywidgets` <a href="https://ipywidgets.readthedocs.io/en/latest/">Link to ipywidgtes right here using textbox command</a> 
 or libraries based on ipywidgtes such as `bqplot`,`ipyvolume`,plotly's `FigureWidget` cite`pf` (reference at end)
 can be included in `iwrite` command as well as other objects that can be passed to `write` with caveat of Javascript.
 {.Warning}
 ---        
 ## Plotting with Matplotlib
-```python run s
+```python run s .friendly
 import numpy as np, matplotlib.pyplot as plt
 x = np.linspace(0,2*np.pi)
 with plt.style.context('ggplot'):
@@ -97,7 +84,6 @@ s.display()
 |r1|r2|r3|
 
 ---
-    
 # Plotly and Pandas DataFrame only show if you have installed
 ```python run
 try:
@@ -135,43 +121,8 @@ except:
     fig = '### Install `plotly` to view output'
 write(('## Writing Plotly Figure',fig))
 ```
----
-    
-## Interactive Apps on Slide
-Use `ipywidgets`, `bqplot`,`ipyvolume` , `plotly Figurewidget` etc. to show live apps like this! 
-```python run src
-import ipywidgets as ipw
-import numpy as np, matplotlib.pyplot as plt
-grid, [(plot,button, _), code] = prs.iwrite([
-            '## Plot will be here! Click button below to activate it!',
-            ipw.Button(description='Click me to update race plot',layout=ipw.Layout(width='max-content')),
-            "[Check out this app](https://massgh.github.io/pivotpy/Widgets.html#VasprunApp)"],src.focus_lines([4,5,6,7,*range(24,30)]))
-        
-def update_plot():
-    x = np.linspace(0,0.9,10)
-    y = np.random.random((10,))
-    _sort = np.argsort(y)
-            
-    fig,ax = plt.subplots(figsize=(3.4,2.6))                
-    ax.barh(x,y[_sort],height=0.07,color=plt.cm.get_cmap('plasma')(x[_sort]))
-        
-    for s in ['right','top','bottom']:
-        ax.spines[s].set_visible(False)
-            
-    ax.set(title='Race Plot', ylim = [-0.05,0.95], xticks=[],yticks=[c for c in x],yticklabels=[rf'$X_{int(c*10)}$' for c in x[_sort]])
-    global plot # only need if you want to change something on it inside function
-    plot = grid.update(plot, fig) #Update plot each time
-            
-def onclick(btn):
-    update_plot()
-
-button.on_click(onclick)
-update_plot() #Initialize plot
-```
-notes:## Something to hide from viewers!:
 
 ---
-
 ## Displaying image from url from somewhere in Kashmir (کشمیر)
 image`https://assets.gqindia.com/photos/616d2712c93aeaf2a32d61fe/master/pass/top-im.jpg`
 
@@ -183,8 +134,5 @@ $$\int_0^1\frac{1}{1-x^2}dx$$
 ---
 ## Built-in CSS styles
 {{css_styles}}
-
-
- سارے جہاں میں دھوم ہماری زباں کی 
-  ہے۔
+ سارے جہاں میں دھوم ہماری زباں کی ہے۔
 {.Right .RTL}
