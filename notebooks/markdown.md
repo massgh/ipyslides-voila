@@ -45,8 +45,10 @@ Such as `IPython.display.<HTML,SVG,Markdown,Code>` etc. or third party such as `
 ## Plots and Other **Data**{style='color:var(--accent-color);'} Types
 #### These objects are implemented to be writable in `write` command:
 {{custom_methods}}
-Many will be extentended in future. If an object is not implemented, use `display(obj)` to show inline or use library's specific
+
+If an object is not implemented, use `display(obj)` to show inline or use library's specific
 command to show in Notebook outside `write`.
+{.Block-red}
 
 ---
 ## Interactive Widgets
@@ -76,12 +78,15 @@ def push():
     return f'You are watching Youtube at Time-{t.tm_hour:02}:{t.tm_min:02}'
 s.display()
 ```
----  
+
+---
+class`Block`
 ## Data Tables
 |h1|h2|h3|
 |---|---|---|
 |d1|d2|d3|
 |r1|r2|r3|
+^^^
 
 ---
 # Plotly and Pandas DataFrame only show if you have installed
@@ -127,12 +132,17 @@ write(('## Writing Plotly Figure',fig))
 image`https://assets.gqindia.com/photos/616d2712c93aeaf2a32d61fe/master/pass/top-im.jpg`
 
 ---
+
 ## $\LaTeX$ in Slides
+
 Use `$ $` or `$$ $$` to display latex in Markdown, or embed images of equations
+
 $$\int_0^1\frac{1}{1-x^2}dx$$
 
 ---
 ## Built-in CSS styles
+class`Block-green`
 {{css_styles}}
  سارے جہاں میں دھوم ہماری زباں کی ہے۔
 {.Right .RTL}
+^^^
