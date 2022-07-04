@@ -135,7 +135,7 @@ image`https://assets.gqindia.com/photos/616d2712c93aeaf2a32d61fe/master/pass/top
 
 ## $\LaTeX$ in Slides
 
-Use `$ $` or `$$ $$` to display latex in Markdown, or embed images of equations
+Use single or double $ around math to display latex in Markdown, or embed images of equations
 
 $$\int_0^1\frac{1}{1-x^2}dx$$
 
