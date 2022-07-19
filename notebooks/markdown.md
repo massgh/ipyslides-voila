@@ -52,7 +52,7 @@ command to show in Notebook outside `write`.
 
 ---
 ## Interactive Widgets
-$pf`This is refernce to FigureWidget using LiveSlides.cite command`
+[pf]:`This is refernce to FigureWidget using LiveSlides.cite command`
 ### Any object in `ipywidgets` <a href="https://ipywidgets.readthedocs.io/en/latest/">Link to ipywidgtes right here using textbox command</a> 
 or libraries based on ipywidgtes such as `bqplot`,`ipyvolume`,plotly's `FigureWidget` cite`pf` (reference at end)
 can be included in `iwrite` command as well as other objects that can be passed to `write` with caveat of Javascript.
